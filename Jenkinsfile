@@ -15,12 +15,6 @@ ls -lah'''
           }
         }
         stage('smoke') {
-          agent {
-            docker {
-              image 'php'
-            }
-            
-          }
           steps {
             sh './run-smoke-tests'
           }
