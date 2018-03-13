@@ -14,7 +14,7 @@ ls -lah'''
             
           }
         }
-        stage('clean') {
+        stage('smoke') {
           agent {
             docker {
               image 'php'
@@ -22,7 +22,7 @@ ls -lah'''
             
           }
           steps {
-            sh 'php --version'
+            sh './run-smoke-tests'
           }
         }
       }
